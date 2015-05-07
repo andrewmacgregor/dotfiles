@@ -164,7 +164,19 @@ layers configuration."
   (add-hook 'before-save-hook 'whitespace-cleanup)
 
   ;; set Marked 2 as the preview
-  (setq markdown-open-command "/usr/local/bin/mark"))
+  (setq markdown-open-command "/usr/local/bin/mark")
+
+  ;; ctags setup
+  (setq ctags-command "ctags -f %s -Re --languages=ruby --exclude=.git --exclude=log --exclude=coverage --exclude=tmp --exclude=vendor --exclude=node_modules %s")
+
+  (defun create-tags (dir-name)
+    "Create tags file."
+    (interactive "DDirectory: ")
+    (shell-command
+     (format
+      ctags-command
+      (expand-file-name "TAGS" (directory-file-name dir-name))
+      (directory-file-name dir-name)))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
