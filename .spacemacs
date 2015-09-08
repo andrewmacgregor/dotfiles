@@ -2,11 +2,14 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+;; install additional packages without a layer
+(setq dotspacemacs-additional-packages '(ruby-hash-syntax corral git-gutter git-gutter-fringe))
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
   (setq-default
    ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
+   ;; Paths must have a trailing slash (ie. `~/git-devel/dotfiles/layers/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
@@ -16,7 +19,14 @@
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'nil
+                      auto-completion-tab-key-behavior 'nil
+                      auto-completion-complete-with-key-sequence "jf"
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-show-snippets-in-popup t)
+     con
      better-defaults
      markdown
      (git :variables
@@ -31,7 +41,8 @@
      javascript
      clojure
      key-chord
-     rspec-mode)
+     rspec-mode
+     feature-mode)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -68,6 +79,7 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-light
+                         solarized-dark
                          material)
 
    ;; If non nil the cursor color matches the state color.
@@ -98,7 +110,7 @@ before layers configuration."
    dotspacemacs-enable-paste-micro-state t
    ;; Guide-key delay in seconds. The Guide-key is the popup buffer listing
    ;; the commands bound to the current keystrokes.
-   dotspacemacs-guide-key-delay 0.4
+   dotspacemacs-guide-key-delay 0.2
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
@@ -176,7 +188,44 @@ layers configuration."
      (format
       ctags-command
       (expand-file-name "TAGS" (directory-file-name dir-name))
-      (directory-file-name dir-name)))))
+      (directory-file-name dir-name))))
+
+  ;; powerline
+  (setq powerline-default-separator 'butt)
+
+  ;; guide-key
+  (setq guide-key/popup-window-position 'right)
+
+  ;; delete selection on yank
+  (setq delete-selection-mode 1)
+
+  ;; disable annoying helm completion at point
+  (setq helm-mode-handle-completion-in-region nil)
+
+  ;; delay on autocomplete
+  (setq ac-delay 2.0)
+
+  ;; use more ruby style word boundaries
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?: ".")
+
+  ;; set up yasnippet
+  (setq yas-snippet-dirs
+        '("~/git-devel/dotfiles/emacs/snippets"))
+
+  (yas-global-mode 1)
+
+  (global-set-key (kbd "M-9") 'corral-parentheses-backward)
+  (global-set-key (kbd "M-0") 'corral-parentheses-forward)
+  (global-set-key (kbd "M-[") 'corral-brackets-backward)
+  (global-set-key (kbd "M-]") 'corral-brackets-forward)
+  (global-set-key (kbd "M-{") 'corral-braces-backward)
+  (global-set-key (kbd "M-}") 'corral-braces-forward)
+  (global-set-key (kbd "M-\"") 'corral-double-quotes-backward)
+
+  (custom-set-variables '(coffee-tab-width 2))
+
+  (setq js-indent-level 2))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -200,7 +249,11 @@ layers configuration."
  '(custom-safe-themes
    (quote
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "e80932ca56b0f109f8545576531d3fc79487ca35a9a9693b62bf30d6d08c9aaf" "a041a61c0387c57bb65150f002862ebcfe41135a3e3425268de24200b82d6ec9" default)))
+ '(expand-region-contract-fast-key "V")
+ '(expand-region-reset-fast-key "r")
  '(fci-rule-color "#073642")
+ '(helm-mode-handle-completion-in-region nil)
+ '(helm-mode-no-completion-in-region-in-modes nil)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -225,6 +278,7 @@ layers configuration."
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(magit-diff-use-overlays nil)
+ '(magit-use-overlays nil)
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(ring-bell-function (quote ignore) t)
@@ -253,6 +307,9 @@ layers configuration."
      (340 . "#268fc6")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-markup-indent-offset 2)
  '(weechat-color-list
    (quote
     (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
@@ -261,4 +318,5 @@ layers configuration."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
