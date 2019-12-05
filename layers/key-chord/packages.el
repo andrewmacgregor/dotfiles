@@ -12,7 +12,7 @@
 
 (defvar key-chord-packages
   '(
-    key-chord 
+    key-chord
     )
   "List of all packages to install and/or initialize. Built-in packages
 which require an initialization must be listed explicitly in the list.")
@@ -27,10 +27,10 @@ which require an initialization must be listed explicitly in the list.")
   (use-package key-chord
     :init
     (key-chord-mode 1)
-    (key-chord-define-global "jj" 'ace-jump-word-mode)
-    (key-chord-define-global "jj" 'ace-jump-word-mode)
-    (key-chord-define-global "jl" 'ace-jump-line-mode)
-    (key-chord-define-global "jk" 'ace-jump-char-mode)
+    (key-chord-define-global "jj" 'avy-goto-word-1)
+    (key-chord-define-global "jl" 'avy-goto-line)
+    (key-chord-define-global "jk" 'avy-goto-char)
+    (key-chord-define-global "hh" 'yas-expand)
     (key-chord-define-global "uu" 'undo-tree-visualize)
     (key-chord-define-global "xx" 'execute-extended-command)))
 ;;
