@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
      react
      (ruby :variables
            ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rvm
+           ruby-version-manager 'rbenv
            ruby-enable-ruby-on-rails-support t
            ruby-test-runner 'rspec)
      ruby-on-rails
@@ -591,7 +591,7 @@ before packages are loaded."
   ;; get helm to ignore files that ag ignores
   (setq helm-ag-use-agignore t)
 
-  (setq enh-ruby-program "/Users/andrew/.rvm/rubies/ruby-2.3.1/bin/ruby")
+  ;; (setq enh-ruby-program "/Users/andrew/.rvm/rubies/ruby-2.3.1/bin/ruby")
 
   (defun my-web-mode-hook ()
     "Hooks for Web mode."
