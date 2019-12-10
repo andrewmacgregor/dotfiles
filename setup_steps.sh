@@ -20,3 +20,18 @@ brew install libxml2 libxslt
 brew cask install istat-menus
 brew cask install ccmenu
 brew cask install carbon-copy-cloner
+brew install jump
+brew install gdal
+brew cask install omnifocus
+brew install yarn
+brew install ag
+
+wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
+tar xvzf zeromq-2.2.0.tar.gz
+cd zeromq-2.2.0
+sudo ./configure
+sudo make install
+
+# may need to reinstall rgeo
+gem uninstall rgeo
+bundle install
