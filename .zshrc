@@ -68,7 +68,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rails ruby emacs)
+plugins=(
+    rails
+    ruby
+    emacs
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,3 +131,6 @@ alias au='unset AGW_region; export AGW_region=au'
 
 # setup jump
 eval "$(jump shell)"
+
+# autosuggestions binding
+bindkey '^ ' autosuggest-accept

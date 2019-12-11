@@ -25,6 +25,9 @@ brew install gdal
 brew cask install omnifocus
 brew install yarn
 brew install ag
+brew cask install zoomus
+brew cask install keybase
+brew cask install private-internet-access #also run the install as instructed
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -35,3 +38,8 @@ sudo make install
 # may need to reinstall rgeo
 gem uninstall rgeo
 bundle install
+
+
+# zsh setup
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
