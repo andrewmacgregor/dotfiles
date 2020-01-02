@@ -28,6 +28,17 @@ brew install ag
 brew cask install zoomus
 brew cask install keybase
 brew cask install private-internet-access #also run the install as instructed
+brew install awscli
+brew install terraform
+brew install terragrunt
+brew cask install marshallofsound-google-play-music-player
+brew install libsodium
+brew cask install diffmerge
+brew cask install p4v
+brew cask install chromedriver
+brew cask install skitch
+brew install ispell
+brew cask install bettertouchtool
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -37,6 +48,7 @@ sudo make install
 
 # may need to reinstall rgeo
 gem uninstall rgeo
+bundle config build.rgeo --with-geos-dir=`/usr/local/bin/geos-config --prefix`
 bundle install
 
 

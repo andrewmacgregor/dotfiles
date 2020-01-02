@@ -128,7 +128,7 @@ alias be="bundle exec"
 alias clean_npm='npm prune; npm install; rm tmp/bundles/*'
 alias us='unset AGW_region; export AGW_region=us'
 alias au='unset AGW_region; export AGW_region=au'
-
+alias ws='cd ~/git-devel/website && RAILS_ENV=development source ~/git-devel/website/config/settings/boot.sh ~/git-devel/website/config/settings/overrides.sh'
 # setup jump
 eval "$(jump shell)"
 
