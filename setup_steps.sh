@@ -39,6 +39,7 @@ brew cask install chromedriver
 brew cask install skitch
 brew install ispell
 brew cask install bettertouchtool
+brew install imagemagick@6 && brew link imagemagick@6 --force
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -55,3 +56,9 @@ bundle install
 # zsh setup
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# ccmenu urls
+https://semaphoreci.com/api/v1/projects/6f09cb80-c99d-45e8-80f6-e523a8995c98/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # website
+https://semaphoreci.com/api/v1/projects/04710f23-8358-4c84-b4b4-5c28de2d979d/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # static maps
+https://semaphoreci.com/api/v1/projects/0036dc97-9d96-4199-84e0-b6e7338df11f/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # bluebox
+https://semaphoreci.com/api/v1/projects/ae7d80ca-26db-48d7-bf6b-3473b95d0f82/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # docsplit
