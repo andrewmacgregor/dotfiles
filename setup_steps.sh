@@ -40,6 +40,12 @@ brew cask install skitch
 brew install ispell
 brew cask install bettertouchtool
 brew install imagemagick@6 && brew link imagemagick@6 --force
+brew install tree
+brew cask install postman
+brew install jq
+brew install coreutils
+brew cask install phantomjs
+brew cask install google-earth-pro
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -62,3 +68,9 @@ https://semaphoreci.com/api/v1/projects/6f09cb80-c99d-45e8-80f6-e523a8995c98/cc.
 https://semaphoreci.com/api/v1/projects/04710f23-8358-4c84-b4b4-5c28de2d979d/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # static maps
 https://semaphoreci.com/api/v1/projects/0036dc97-9d96-4199-84e0-b6e7338df11f/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # bluebox
 https://semaphoreci.com/api/v1/projects/ae7d80ca-26db-48d7-bf6b-3473b95d0f82/cc.xml?auth_token=exJvizRyoNnAKG6XNCQz&ccmenu=cc.xml # docsplit
+
+# gpg
+brew install gpg
+gpg --list-secret-keys --keyid-format LONG
+git config --global user.signingkey <keyname>
+gpg --armor --export <keyname>
