@@ -605,6 +605,9 @@ before packages are loaded."
 
   ;; don't add coding hints
   (setq enh-ruby-add-encoding-comment-on-save nil)
+
+  ;; avoid missing submodules in projectile
+  (setq projectile-git-submodule-command nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
