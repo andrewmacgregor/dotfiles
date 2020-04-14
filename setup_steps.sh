@@ -46,6 +46,7 @@ brew install jq
 brew install coreutils
 brew cask install phantomjs
 brew cask install google-earth-pro
+brew install httpie
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -74,3 +75,7 @@ brew install gpg
 gpg --list-secret-keys --keyid-format LONG
 git config --global user.signingkey <keyname>
 gpg --armor --export <keyname>
+
+
+# install chrome extensions
+# https://chrome.google.com/webstore/detail/vimeo-repeat-speed/noonakfaafcdaagngpjehilgegefdima?hl=en
