@@ -230,12 +230,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
-                         monokai)
+   dotspacemacs-themes '(dracula
+                         doom-monokai-pro
+                         spacemacs-dark
+                         solarized-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -608,6 +606,28 @@ before packages are loaded."
 
   ;; avoid missing submodules in projectile
   (setq projectile-git-submodule-command nil)
+
+
+  ;; dracula theme settings
+  ;; Don't change the font size for some headings and titles (default t)
+  (setq dracula-enlarge-headings nil)
+
+  ;; Adjust font size of titles level 1 (default 1.3)
+  (setq dracula-height-title-1 1.25)
+
+  ;; Adjust font size of titles level 2 (default 1.1)
+  (setq dracula-height-title-1 1.15)
+
+  ;; Adjust font size of titles level 3 (default 1.0)
+  (setq dracula-height-title-1 1.05)
+
+  ;; Adjust font size of document titles (default 1.44)
+  (setq dracula-height-doc-title 1.4)
+
+  ;; Use less pink and bold on the mode-line and minibuffer (default nil)
+  (setq dracula-alternate-mode-line-and-minibuffer t)
+
+  ;; add homebrew path first
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
