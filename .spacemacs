@@ -628,6 +628,7 @@ before packages are loaded."
   (setq dracula-alternate-mode-line-and-minibuffer t)
 
   ;; add homebrew path first
+  (add-to-list 'exec-path "/usr/local/bin/")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

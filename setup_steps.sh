@@ -47,6 +47,7 @@ brew install coreutils
 brew cask install phantomjs
 brew cask install google-earth-pro
 brew install httpie
+brew install git
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
