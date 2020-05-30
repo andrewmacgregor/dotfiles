@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ci regression
+# key: cir
+# --
+[regression]
