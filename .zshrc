@@ -8,7 +8,7 @@ export ZSH="/Users/andrew/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -129,6 +129,7 @@ alias clean_npm='npm prune; npm install; rm tmp/bundles/*'
 alias us='unset AGW_region; export AGW_region=us'
 alias au='unset AGW_region; export AGW_region=au'
 alias ws='cd ~/git-devel/website && RAILS_ENV=development source ~/git-devel/website/config/settings/boot.sh . && source ~/git-devel/website/config/settings/overrides.sh'
+alias tf="terraform"
 # setup jump
 eval "$(jump shell)"
 
@@ -140,3 +141,5 @@ function sshlist() {
   group 'ssh'
   awk '$1 ~ /Host$/ {for (i=2; i<=NF; i++) print $i}' ~/.ssh/config
 }
+
+eval "$(starship init zsh)"

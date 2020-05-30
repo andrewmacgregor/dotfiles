@@ -1,0 +1,78 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    # "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "env_var",
+    # "hg_branch",
+    # "docker_context",
+    "package",
+    # "dotnet",
+    # "elixir",
+    #"elm",
+    # "erlang",
+    "golang",
+    # "haskell",
+    # "java",
+    # "julia",
+    "nodejs",
+    # "ocaml",
+    # "php",
+    # "purescript",
+    # "python",
+    "ruby",
+    # "rust",
+    "terraform",
+    # "zig",
+    # "nix_shell",
+    # "conda",
+    # "memory_usage",
+    "aws",
+    # "crystal",
+    # "cmd_duration",
+    "custom",
+    "line_break",
+    # "jobs",
+    # "battery",
+    # "time",
+    "character",
+]
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are configuring is "character"
+symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+[line_break]
+disabled = false
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+
+[aws]
+style = "dimmed cyan"
+displayed_items = "all"
+[aws.region_aliases]
+ap-southeast-2 = "Sydney"
+us-east-1 = "Virginia"
+
+[ruby]
+style = "dimmed red"
+
+[nodejs]
+style = "dimmed green"
+
+[git_status]
+style = "dimmed red"
+
+[env_var]
+variable = "AGW_region"
+style = "bold purple"
+default = ""

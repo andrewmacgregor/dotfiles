@@ -48,6 +48,11 @@ brew cask install phantomjs
 brew cask install google-earth-pro
 brew install httpie
 brew install git
+brew install ansible
+brew install shellcheck
+brew install sslscan
+brew install wget
+brew install starship
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
@@ -80,3 +85,18 @@ gpg --armor --export <keyname>
 
 # install chrome extensions
 # https://chrome.google.com/webstore/detail/vimeo-repeat-speed/noonakfaafcdaagngpjehilgegefdima?hl=en
+
+# marked 2 setup
+# download latest version
+# add script to /usr/local/bin/mark
+# #!/bin/sh
+# if [ $1 ]; then
+#     open -a "Marked 2" $1;
+# else
+#     open -a "Marked 2";
+# fi
+# chmod +x /usr/local/bin/mark
+# Set emacs variable (setq markdown-open-command "/usr/local/bin/mark")
+
+# Powerline fonts
+# https://github.com/powerline/fonts
