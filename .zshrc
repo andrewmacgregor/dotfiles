@@ -123,13 +123,17 @@ alias zc="zeus console"
 alias zs="zeus server"
 alias zr="zeus rspec"
 alias gs="git status"
-alias 'guard!'='dropdb agworld_test; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:setup --trace; guard'
+alias 'guard!'='dropdb agworld_test; DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test be rake db:setup --trace; bundle exec guard'
 alias be="bundle exec"
 alias clean_npm='npm prune; npm install; rm tmp/bundles/*'
 alias us='unset AGW_region; export AGW_region=us'
 alias au='unset AGW_region; export AGW_region=au'
 alias ws='cd ~/git-devel/website && RAILS_ENV=development source ~/git-devel/website/config/settings/boot.sh . && source ~/git-devel/website/config/settings/overrides.sh'
 alias tf="terraform"
+alias tf12="terraform12"
+alias recent_branches="git for-each-ref --sort=-committerdate --count=10 refs/heads"
+
+
 # setup jump
 eval "$(jump shell)"
 
@@ -141,5 +145,20 @@ function sshlist() {
   group 'ssh'
   awk '$1 ~ /Host$/ {for (i=2; i<=NF; i++) print $i}' ~/.ssh/config
 }
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# link rbenv rubies to latest version of openssl
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# set up chamber to use default AWS key
+export CHAMBER_KMS_KEY_ALIAS=aws/ssm
+
+# Allow [ or ] whereever you want
+unsetopt nomatch
+
+# set go path
+export PATH=$PATH:$(go env GOPATH)/bin
 
 eval "$(starship init zsh)"

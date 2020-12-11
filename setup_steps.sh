@@ -53,6 +53,14 @@ brew install shellcheck
 brew install sslscan
 brew install wget
 brew install starship
+brew cask install google-cloud-sdk
+brew cask install qgis
+brew tap liamg/tfsec
+brew install liamg/tfsec/tfsec
+brew cask install aws-vault
+brew install chamber
+brew install golang
+brew install pgformatter
 
 wget http://download.zeromq.org/zeromq-2.2.0.tar.gz
 tar xvzf zeromq-2.2.0.tar.gz
